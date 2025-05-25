@@ -95,7 +95,7 @@ const form = useRef();
       <div className='about1 container d-flex flex-row justify-content-center'>
         <div>
           <h6 className='aboutus'>about</h6>
-          <h1 className='head' style={{textAlign:'center',lineHeight:'50px'}}>What I'm All</h1>
+          <h1 className='head' style={{textAlign:'center',lineHeight:'50px'}}>What I'm all about</h1>
           <p className="text-center contend">
           Fueled by passion, powered by HTML, CSS, JavaScript & React <br /> — I build experiences, not just websites.
           </p>
