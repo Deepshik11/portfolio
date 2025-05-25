@@ -10,9 +10,10 @@ import emailjs from "@emailjs/browser";
 import { toast } from 'react-hot-toast';
 import { NavLink } from 'react-router-dom';
 import Footer from '../Section/Footer.jsx'
+import profile from '../assets/profile_image.png'
 
 const customIcon = new L.Icon({
-  iconUrl: '/src/assets/profile_image.png', // Place your marker image in public/
+  iconUrl: profile, // Place your marker image in public/
   iconSize: [50, 50],
   iconAnchor: [25, 50],
   popupAnchor: [0, -50],

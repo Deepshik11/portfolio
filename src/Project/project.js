@@ -1,3 +1,6 @@
+import examShelfImg from '../assets/project1.png'
+import BoroImg from '../assets/project2.png'
+import Figma from '../assets/figma1.png'
 const projects = [
   {
     id: 1,
@@ -7,7 +10,7 @@ const projects = [
     description2: "A web app where teachers create and students view question papers.",
     description3: "Helps faculty design papers and students prepare with past exams.",
     link: "/project/examshelf",
-    imageUrl:"/src/assets/project1.png"
+    imageUrl:examShelfImg
   },
   {
     subtitle:"Borocelle - 2023",
@@ -17,7 +20,7 @@ const projects = [
     description2: "Clean UI highlighting product images, descriptions, and pricing to enhance user engagement.",
     description3: "Utilized HTML5 and CSS3 to build semantic, accessible markup with modern styling techniques.",
     link: "/project/Borocelle",
-    imageUrl:"/src/assets/project2.png"
+    imageUrl:BoroImg
   },
   {
     id: 3,
@@ -27,7 +30,7 @@ const projects = [
     description2: "Applied UI principles like proper spacing , contrast, and button hierarchy.",
     description3: "Created as a design exercise to strengthen app UI/UX fundamentals.",
     link: "/project/Pizza-app-design",
-    imageUrl:"/src/assets/figma1.png"
+    imageUrl:Figma
   },
 
 ];
