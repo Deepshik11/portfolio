@@ -10,7 +10,7 @@ const Moreprojects=[
         route : "examshelf",
         name : "ExamShelf",
         webtype:"Educational Web Application",
-        type:'Individual Project',
+        type:'Group Project',
         year:2025,
         category: "Full Stack",
         role:['Full Stack Developer','UI/UX Designer'],
