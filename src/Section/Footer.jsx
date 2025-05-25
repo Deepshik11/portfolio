@@ -6,7 +6,7 @@ import { FiExternalLink } from 'react-icons/fi';
             <hr style={{height:'1px',background:'white',border:'none'}}/>
             <div className='d-flex flex-column flex-md-row justify-content-between'>
               <div>
-                <p style={{color:'gray',textAlign:"center",marginBottom:'0px'}} className='mb-4 mb-md-0'>&copy; 2025 Deepshik M. All rights reserved.</p>
+                <p style={{color:'gray',textAlign:"center",marginBottom:'0px'}} className='mb-4 mb-md-0'>&copy; 2025 Deepshik M.</p>
               </div>
               <div className='d-flex gap-4 flex-column flex-md-row'>
                 <div className='d-flex align-items-center justify-content-center gap-2'>

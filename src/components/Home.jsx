@@ -11,6 +11,19 @@ import { toast } from 'react-hot-toast';
 import { NavLink } from 'react-router-dom';
 import Footer from '../Section/Footer.jsx'
 import profile from '../assets/profile_image.png'
+import wix from '../assets/wix.png'
+import canva from '../assets/canva.png'
+import vs from '../assets/visual.png'
+import figma from '../assets/figma.png'
+import git from '../assets/github-sign.png'
+import html from '../assets/html-5.png'
+import css from '../assets/css.png'
+import boot from '../assets/bootstrap.png'
+import js from '../assets/js.png'
+import node from '../assets/node.png'
+import db from '../assets/mongodb.png'
+import react from '../assets/physics.png'
+import python from '../assets/python.png'
 
 const customIcon = new L.Icon({
   iconUrl: profile, // Place your marker image in public/
@@ -99,23 +112,23 @@ const form = useRef();
                 </Card.Text>
                 <div className="tool-icons mt-3 d-flex flex-wrap gap-2">
                   <span className="tool-badge d-flex align-items-center">
-                    <img src="/src/assets/wix.png" alt="wix" className="tool-icon" />
+                    <img src={wix} alt="wix" className="tool-icon" />
                     Wix
                   </span>
                   <span className="tool-badge d-flex align-items-center">
-                    <img src="/src/assets/canva.png" alt="canva" className="tool-icon" />
+                    <img src={canva} alt="canva" className="tool-icon" />
                     Canva
                   </span>
                   <span className="tool-badge d-flex align-items-center">
-                    <img src="/src/assets/figma.png" alt="figma" className="tool-icon" />
+                    <img src={figma} alt="figma" className="tool-icon" />
                     Figma
                   </span>
                   <span className="tool-badge d-flex align-items-center">
-                    <img src="/src/assets/visual.png" alt="vs code" className="tool-icon" />
+                    <img src={vs} alt="vs code" className="tool-icon" />
                     VS code
                   </span>
                   <span className="tool-badge d-flex align-items-center">
-                    <img src="/src/assets/github-sign.png" alt="github" className="tool-icon" />
+                    <img src={git} alt="github" className="tool-icon" />
                     Git/Github
                   </span>
                 </div>
@@ -131,35 +144,35 @@ const form = useRef();
                 </Card.Text>
                   <div className="tool-icons mt-3 d-flex flex-wrap gap-2">
                     <span className="tool-badge d-flex align-items-center">
-                      <img src="/src/assets/html-5.png" alt="html" className="tool-icon" />
+                      <img src={html} alt="html" className="tool-icon" />
                       HTML5
                     </span>
                     <span className="tool-badge d-flex align-items-center">
-                      <img src="/src/assets/css.png" alt="css" className="tool-icon" />
+                      <img src={css} alt="css" className="tool-icon" />
                       CSS3
                     </span>
                     <span className="tool-badge d-flex align-items-center">
-                      <img src="/src/assets/bootstrap.png" alt="bootstrap" className="tool-icon" />
+                      <img src={boot} alt="bootstrap" className="tool-icon" />
                       Bootstrap
                     </span>
                     <span className="tool-badge d-flex align-items-center">
-                      <img src="/src/assets/js.png" alt="Javascript" className="tool-icon" />
+                      <img src={js} alt="Javascript" className="tool-icon" />
                       JavaScript
                     </span>
                     <span className="tool-badge d-flex align-items-center">
-                      <img src="/src/assets/physics.png" alt="react" className="tool-icon" />
+                      <img src={react} alt="react" className="tool-icon" />
                       React
                     </span>
                     <span className="tool-badge d-flex align-items-center">
-                      <img src="/src/assets/node.png" alt="nodejs" className="tool-icon" />
+                      <img src={node} alt="nodejs" className="tool-icon" />
                       Node Js
                     </span>
                     <span className="tool-badge d-flex align-items-center">
-                      <img src="/src/assets/mongodb.png" alt="mongodb" className="tool-icon" />
+                      <img src={db} alt="mongodb" className="tool-icon" />
                       MongoDB
                     </span>
                     <span className="tool-badge d-flex align-items-center">
-                      <img src="/src/assets/python.png" alt="python" className="tool-icon" />
+                      <img src={python} alt="python" className="tool-icon" />
                       Python
                     </span>
                   </div>
