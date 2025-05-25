@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdfdfd;
+  color: #222;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+}
+
+.project-name {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.project-description {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.icon-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.icon-content span {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.project-info {
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.tech-stack h5 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.description p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.project-navigation {
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.nav-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}

@@ -1,0 +1,13 @@
+:root{
+    --base1:#00002b!important;
+    --base2:#13003d!important;
+    --base3:#210051!important;
+    --base4:#2B0056!important;
+    --base5:#a259ff!important;
+
+    --box-shadow:box-shadow: 0 0 40px #a178ff;
+}
+#root{
+ background: #060010;
+ background: linear-gradient(0deg, rgba(6, 0, 16, 1) 0%, rgba(26, 0, 43, 1) 100%);
+}

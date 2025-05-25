@@ -1,0 +1,198 @@
+.cat-button {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  color: #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.cat-button:hover {
+  background-color: white;
+  color: #231131;
+  border-color: #fff;
+}
+
+svg{
+    color: white;
+}
+
+.cat-button.active1 {
+  cursor: pointer;
+  background-color: white;
+  color: #231131;
+  white-space: nowrap;
+  border-color: white;
+}
+.cus_card{
+    transition: transform .2s linear;
+}
+.cus_card:hover{
+    transform: scale(1.02);
+}
+.talk-link1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 400;
+        z-index: 200000;
+        height: 50px;
+        text-align: center;
+        color: white;
+        border: 1px solid transparent;
+        /* Added border style */
+        border-radius: 25px;
+        background: rgb(43, 43, 43);
+        transition: background .5s ease,
+            color .5s ease;
+        padding: 0 24px;
+        margin-bottom: 42px;
+    }
+
+    .talk-link2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 400;
+        z-index: 200000;
+        height: 36px;
+        text-align: center;
+        color: white;
+        border: 1px solid transparent;
+        /* Added border style */
+        border-radius: 25px;
+        background: rgb(27, 27, 27);
+        transition: background .5s ease,
+            color .5s ease;
+        padding: 0 24px;
+        margin-bottom: 42px;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        margin-bottom: 8%;
+    }
+
+    .talk-link1:hover {
+        color: rgb(17, 17, 17);
+        background-color: white;
+        text-decoration: none;
+    }
+
+    .technique {
+        display: flex;
+        gap: 40px;
+    }
+
+    .tech2 {
+        column-gap: 24px;
+        display: flex;
+    }
+
+    .talk-link {
+        font-size: 13px;
+        font-weight: 700;
+        line-height: normal;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: .5px;
+    }
+
+    .vidio-container {
+        object-fit: cover;
+        margin-top: 8%;
+    }
+
+    video::-webkit-media-controls {
+        display: none;
+    }
+
+    video::-webkit-media-controls-start-playback-button {
+        display: none;
+    }
+
+    .talk-link3 {
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 400;
+        z-index: 200000;
+        height: 50px;
+        text-align: center;
+        color: white;
+        border: 1px solid transparent;
+        /* Added border style */
+        border-radius: 25px;
+        background: rgb(43, 43, 43);
+        transition: background .5s ease,
+            color .5s ease;
+        padding: 0 24px;
+        margin-bottom: 42px;
+        margin-top: 8%;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        height: 280px;
+        align-items: center;
+    }
+
+    .talk-link3:hover {
+        color: rgb(17, 17, 17);
+        background-color: white;
+        text-decoration: none;
+    }
+
+    .back-to-page {
+        display: flex;
+        justify-content: space-between;
+        margin: 8% 0;
+    }
+
+    .talk-link4 {
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 400;
+        z-index: 200000;
+        text-align: center;
+        color: white;
+        margin-bottom: 42px;
+        margin-top: 4%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .talk-link4:hover {
+        color: white;
+        text-decoration: none;
+    }
+    .lead{
+        font-size: 16px!important;
+        color: gray!important;
+    }
+    .lead1{
+         font-size: 14px!important;
+        color: gray!important;
+        border: 1px solid gray;
+        background-color: transparent;
+        display: inline-block;
+        padding: 2px 12px;
+        margin-right: 12px;
+        margin-top: 6px;
+        border-radius: 24px;
+    }
