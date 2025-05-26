@@ -6,6 +6,7 @@ import Home from './components/Home.jsx';
 import Project from './components/Project.jsx'
 import { ProjectsMore } from './components/ProjectsMore.jsx';
 import { Toaster } from 'react-hot-toast';
+import ErrorPage from './components/ErrorPage.jsx';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/project/:id" element={<ProjectsMore />} />
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />
+        <Route path="*" element={<ErrorPage/>} />
       </Routes>
     </BrowserRouter>
   );
