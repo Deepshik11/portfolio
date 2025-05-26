@@ -93,7 +93,7 @@ export const ProjectsMore = () => {
                   </div>
 
                   <div className="col-12">
-                    <h6 className="text-uppercase fw-semibold">Technologies:</h6>
+                    <h6 className="text-uppercase fw-semibold">Technologies used:</h6>
                     <div className="d-flex flex-wrap">
                       {project.tech.map((techs, index) => (
                           <p className="lead1" key={index}>
