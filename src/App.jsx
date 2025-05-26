@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import Landing from './components/Landing.jsx';
 import Home from './components/Home.jsx';
 import Project from './components/Project.jsx'
@@ -9,7 +9,7 @@ import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Toaster position="top-right" reverseOrder={false} />
       <Routes>
         <Route path="/project" element={<Project/>}/>
@@ -17,7 +17,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
