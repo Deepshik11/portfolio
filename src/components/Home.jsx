@@ -62,7 +62,7 @@ const form = useRef();
           <ul className="navbar-nav flex-row gap-2">
             <li className="cus_li nav-item"><a className="nav-link text-white" href="#">Home</a></li>
             <li className="cus_li nav-item"><NavLink to='/project' className="nav-link text-white" >Projects</NavLink></li>
-            <li className="cus_li nav-item"><a className="nav-link text-white" target='_blank' href="https://drive.google.com/file/d/1LQvr7C-nLJco2Pi1OI517RsYxkimM7Kh/view?usp=sharing">Resume</a></li>
+            <li className="cus_li nav-item"><a className="nav-link text-white" target='_blank' href="https://drive.google.com/file/d/1lfNrqBz9hRRoY_fpTBZlbLFZtse91b7Q/view?usp=sharing">Resume</a></li>
             <li className="cus_li nav-item"><a className="nav-link text-white" href="#contact">Contact</a></li>
           </ul>
         </div>
