@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 import { Navigate, useParams } from 'react-router-dom'
 import  projects  from '../Project/MorProject.js';
 import "../styles/projectmore.css"
-import Footer from '../Section/Footer.jsx'
+import { FaArrowLeft } from 'react-icons/fa';
 
 export const ProjectsMore = () => {
     const params = useParams();
@@ -22,6 +22,10 @@ export const ProjectsMore = () => {
     return (
         <>
           <main className="shadow-wrapper pt-5">
+            <NavLink className='d-flex align-items-center gap-3 cus_stic mt-5 mb-3' to={"/project"} style={{textDecoration:'none',background:'none'}}>
+                <FaArrowLeft className='loicon' size={16} color="white" />
+                <h6 className='text-white mb-0' >All Projects</h6>
+            </NavLink>
             <h5 className="text-secondary aboutus1 text-uppercase text-center mt-5  pt-sm-5 pt-0">{project.webtype}</h5>
             <h4 className="display-4 text-uppercase fw-bold fs-1 text-white mt-4 mb-5 text-center" style={{letterSpacing:'1px'}}>{project.name}</h4>
             <div className="my-3">
@@ -35,7 +39,7 @@ export const ProjectsMore = () => {
             <div className="fw-bold text-white fs-5">Key Points : </div>
                   <ul>
                       {project.keyPoints.map((keyPoint,index)=> (
-                          <li className="mt-3 " style={{color:'gray'}} key={index}>{keyPoint}</li>
+                          <li className="mt-3 " style={{color:'#a2a4a6'}} key={index}>{keyPoint}</li>
                       ))
                       }
                   </ul>
@@ -102,11 +106,6 @@ export const ProjectsMore = () => {
                       ))}
                     </div>
                   </div>
-                </div>
-                <div className="d-flex justify-content-center mt-3">
-                  <NavLink to={"/project"} className="btn btn-dark px-4 py-2 rounded-pill fw-medium">
-                    Back to Projects
-                  </NavLink>
                 </div>
               </div>
           </main>

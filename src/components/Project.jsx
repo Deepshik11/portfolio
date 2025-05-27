@@ -31,7 +31,7 @@ const Project = () => {
         <div className='about5 mt-5'>
           <h1 className='head' style={{ textAlign: 'center', lineHeight: '60px' }}>My Projects</h1>
           <p className="text-center contend text-white" style={{fontSize:'16px'}}>
-            Here are some of the projects I've worked on,<br /> showcasing  my skills in both frontend and backend development.
+            Here are some of my projects
           </p>
         </div>  
       </div>
@@ -51,7 +51,7 @@ const Project = () => {
       {/* Project Cards */}
       <div className="row cu_con d-flex justify-content-around justify-content-md-center justify-content-xl-start mt-5 gap-5 mb-5">
         {filteredProjects.map((project) => (
-          <div className="cus_card rounded-3"  key={project.name} style={{width: "17.5rem"}}>
+          <NavLink to={`/project/${project.route}`} className="cus_card rounded-3"  key={project.name} style={{width: "17.5rem",textDecoration:'none'}}>
             <img className="card-img-top" src={project.img} style={{height:'200px'}} alt="Card image cap" />
             <div className="card-body p-2">
               <h5 className="card-title px-2 mt-2 fw-bold" style={{color:'white'}}>{project.name}</h5>
@@ -65,7 +65,7 @@ const Project = () => {
                   </div>
             </div>
             <NavLink to={`/project/${project.route}`} className="btn dum_b btn-sm me-2 mt-3 mx-3 mb-4">Know More</NavLink>
-          </div>
+          </NavLink>
         ))}
       </div>
 

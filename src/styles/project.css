@@ -183,12 +183,12 @@ svg{
     }
     .lead{
         font-size: 16px!important;
-        color: gray!important;
+        color: #a2a4a6!important;
     }
     .lead1{
          font-size: 14px!important;
-        color: gray!important;
-        border: 1px solid gray;
+        color: #a2a4a6!important;
+        border: 1px solid #a2a4a6;
         background-color: transparent;
         display: inline-block;
         padding: 2px 12px;
