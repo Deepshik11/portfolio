@@ -31,7 +31,7 @@ const Project = () => {
         <div className='about5 mt-5'>
           <h1 className='head' style={{ textAlign: 'center', lineHeight: '60px' }}>My Projects</h1>
           <p className="text-center contend text-white" style={{fontSize:'16px'}}>
-            Here are some of my projects
+            Here are my projects I've worked on showcasing  my skills in both frontend and backend development
           </p>
         </div>  
       </div>

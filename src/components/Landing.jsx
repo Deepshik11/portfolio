@@ -27,9 +27,6 @@ const Landing = () => {
           <a href="https://github.com/Deepshik11?tab=repositories" target='_blank' className="icon github">
             <i className="fab fa-github"></i>
           </a>
-          <a href="https://www.figma.com/@deepshikm" target='_blank' className="icon figma">
-            <i className="fab fa-figma"></i>
-          </a>
           <a href="https://www.instagram.com/_deepshik.17_/?next=%2F" target='_blank' className="icon x">
             <i className="fab fa-instagram"></i>
           </a>
