@@ -25,13 +25,13 @@ const Project = () => {
     <div className="shadow-wrapper pt-4 pb-2">
       <NavLink className='d-flex align-items-center gap-3 cus_stic mt-5 mb-3' to={"/home"} style={{textDecoration:'none'}}>
           <FaArrowLeft className='loicon' size={16} color="white" />
-          <h6 className='text-white mb-0' >Back to Home</h6>
+          <h6 className='text-white mb-0' >Back</h6>
       </NavLink>
       <div className='about container d-flex flex-row justify-content-center' id='pro'>
         <div className='about5 mt-5'>
           <h1 className='head' style={{ textAlign: 'center', lineHeight: '60px' }}>My Projects</h1>
           <p className="text-center contend text-white" style={{fontSize:'16px'}}>
-            Here are my projects I've worked on showcasing  my skills in both frontend and backend development
+            Here are my projects I've worked on showcasing my skills in both <br />frontend and backend development
           </p>
         </div>  
       </div>
