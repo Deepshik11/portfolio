@@ -7,6 +7,7 @@ import Project from './components/Project.jsx'
 import { ProjectsMore } from './components/ProjectsMore.jsx';
 import { Toaster } from 'react-hot-toast';
 import ErrorPage from './components/ErrorPage.jsx';
+import Admin from './components/Admin.jsx'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />
         <Route path="*" element={<ErrorPage/>} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   );
