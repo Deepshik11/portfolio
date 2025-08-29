@@ -56,13 +56,23 @@ export default function ProjectFormModal({ show, handleClose }) {
       }
     }
 
-    // Send formData (with file)
-    await axios.post("https://portfolio-rjdm.vercel.app/api/projects", data, {
-      headers: { "Content-Type": "multipart/form-data" },
-    });
+    try {
+      await axios.post("https://portfolio-rjdm.vercel.app/api/projects", data, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
 
-    toast.success("Project saved successfully!");
-    handleClose();
+      toast.success("Project saved successfully!");
+      handleClose();
+    } catch (error) {
+      if (error.response) {
+        console.error("API error:", error.response.data);
+        toast.error(error.response.data.error || "Error saving project");
+      } else {
+        console.error("Network error:", error.message);
+        toast.error("Network error. Please try again.");
+      }
+}
+
   } catch (error) {
     console.error(error);
     toast.error("Error saving project");
