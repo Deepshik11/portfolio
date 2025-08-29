@@ -9,6 +9,7 @@ import React, { useRef,useState  } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from 'react-hot-toast';
 import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
 import Footer from '../Section/Footer.jsx'
 import profile from '../assets/profile_image.png'
 import wix from '../assets/wix.png'
@@ -24,6 +25,7 @@ import node from '../assets/node.png'
 import db from '../assets/mongodb.png'
 import react from '../assets/physics.png'
 import python from '../assets/python.png'
+import { trackVisitor } from "../utils/visitorTracker.js";
 
 const customIcon = new L.Icon({
   iconUrl: profile, // Place your marker image in public/
@@ -33,6 +35,11 @@ const customIcon = new L.Icon({
 });
 
 function Home() {
+
+   useEffect(() => {
+    trackVisitor("Home"); // sends record when user visits this page
+  }, []);
+
 const form = useRef();
   const [status, setStatus] = useState("");
 

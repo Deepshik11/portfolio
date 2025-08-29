@@ -29,7 +29,6 @@ const Moreprojects=[
             "Teachers : Login required – can upload and generate question papers.",
             "Admins : Login required – can manage teachers and admin accounts.",
             "Modern, Scalable Stack: Built using React, Node, MongoDB, and integrated APIs for performance and flexibility."
-
         ]
     },
      {

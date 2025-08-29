@@ -2,11 +2,14 @@ import React from 'react'
 import '../styles/landing.css'
 import profileImg from '../assets/profile_image.png'
 import { NavLink } from 'react-router-dom'
-import { incrementViewCount } from '../hooks/incrementViewCount'
+import { trackVisitor } from "../utils/visitorTracker.js";
+import { useEffect } from 'react';
+
+
 const Landing = () => {
-  const handleClick = () => {
-    incrementViewCount();
-  };
+  useEffect(() => {
+      trackVisitor("Landing"); // sends record when user visits this page
+    }, []);
   return (
     <div className="container d-flex justify-content-center align-items-center min-vh-100">
       <div className="brand-container" role="banner">
@@ -22,7 +25,7 @@ const Landing = () => {
         </h1>
         <h2>"Music fuels my creativity during coding sessions."</h2>
         <NavLink to='/home'>
-          <button className='but1 border-0 rounded mt-4' onClick={handleClick}>Tap to view</button>
+          <button className='but1 border-0 rounded mt-4'>Tap to view</button>
         </NavLink>
         <div className="social-icons">
           <a href="https://www.linkedin.com/in/deepshik-m/" target='_blank' className="icon linkedin">
