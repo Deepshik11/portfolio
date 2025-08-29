@@ -1,10 +1,9 @@
-import express from 'express'
+import express from 'express';
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import projectRoutes from "./routes/projectRoutes.js";
 import visitorRoutes from "./routes/visitor.js";
-
 
 dotenv.config();
 
@@ -20,6 +19,7 @@ app.use(
 );
 app.use(express.json());
 
+// Routes
 app.use("/api/projects", projectRoutes);
 app.use("/api/visitors", visitorRoutes); 
 

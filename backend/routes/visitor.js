@@ -3,31 +3,26 @@ import Visitor from "../models/Visitor.js";
 
 const router = express.Router();
 
-
-// POST visitor data
+// Save visitor
 router.post("/", async (req, res) => {
   try {
-    const { section } = req.body;
-    const visitor = new Visitor({
-      page: section, // match frontend "section" to schema "page"
-      ip: req.ip,
-      userAgent: req.headers["user-agent"],
-      timestamp: new Date(),
-    });
+    const { section, timestamp } = req.body;
+    const visitor = new Visitor({ section, timestamp });
     await visitor.save();
-    res.status(201).json({ message: "Visitor tracked successfully" });
-  } catch (err) {
-    res.status(400).json({ error: err.message });
+    res.status(201).json({ message: "Visitor tracked successfully!" });
+  } catch (error) {
+    console.error("❌ Error saving visitor:", error);
+    res.status(500).json({ error: "Server error" });
   }
 });
 
-// GET all visitors (optional for testing)
+// Get all visitors (optional for analytics)
 router.get("/", async (req, res) => {
   try {
-    const visitors = await Visitor.find();
+    const visitors = await Visitor.find().sort({ timestamp: -1 });
     res.json(visitors);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
+  } catch (error) {
+    res.status(500).json({ error: "Server error" });
   }
 });
 

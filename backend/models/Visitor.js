@@ -1,24 +1,9 @@
 import mongoose from "mongoose";
 
-const VisitorSchema = new mongoose.Schema({
-    page: { 
-        type: String, 
-        required: true 
-    },   
-    ip: { 
-        type: String 
-    },                     
-    userAgent: { 
-        type: String 
-    },              
-    duration: { 
-        type: Number, 
-        default: 0 
-    },   
-    timestamp: { 
-        type: Date, 
-        default: Date.now 
-    }
-}, { timestamps: true });
+const visitorSchema = new mongoose.Schema({
+  section: { type: String, required: true },   // e.g. "Landing", "About"
+  timestamp: { type: Date, default: Date.now },
+});
 
-export default mongoose.model("Visitor", VisitorSchema);
+const Visitor = mongoose.model("Visitor", visitorSchema);
+export default Visitor;
