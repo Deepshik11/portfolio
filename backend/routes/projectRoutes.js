@@ -12,10 +12,10 @@ const upload = multer({ storage });
 // GET all projects
 router.get("/", async (req, res) => {
   try {
-    const projects = await Project.find();
+    const projects = await Project.find(); // should return []
     res.json(projects);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: "Failed to fetch projects" });
   }
 });
 

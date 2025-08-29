@@ -14,24 +14,32 @@ const Project = () => {
   // ✅ Fetch projects & categories from backend
   // ✅ Fetch projects from backend and extract categories
 useEffect(() => {
-  const fetchProjects = async () => {
-    try {
-      const res = await fetch("https://portfolio-rjdm.vercel.app/api/projects");
-      const data = await res.json();
+const fetchProjects = async () => {
+  try {
+    const res = await fetch("https://portfolio-rjdm.vercel.app/api/projects");
+    const data = await res.json();
+    console.log("Projects API response:", data); // 👀 debug
+
+    if (Array.isArray(data)) {
       setProjects(data);
 
-      // ✅ Extract unique categories from project data
       const uniqueCategories = Array.from(
         new Set(data.map((project) => project.category || "Uncategorized"))
       );
-      setCategories(["All", ...uniqueCategories]); // prepend "All"
-    } catch (err) {
-      console.error("❌ Error fetching projects:", err);
-    } finally {
-      setLoading(false);
+      setCategories(["All", ...uniqueCategories]);
+    } else {
+      console.error("Expected array but got:", data);
+      setProjects([]); // prevent crash
+      setCategories(["All"]);
     }
-  };
-
+  } catch (err) {
+    console.error("❌ Error fetching projects:", err);
+    setProjects([]);
+    setCategories(["All"]);
+  } finally {
+    setLoading(false);
+  }
+};
   fetchProjects();
   window.scrollTo(0, 0);
 }, []);
