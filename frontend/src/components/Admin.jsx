@@ -29,7 +29,7 @@ const Admin = () => {
   // Fetch projects
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/projects")
+      .get("https://portfolio-rjdm.vercel.app/api/projects")
       .then((res) => setProjects(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -37,7 +37,7 @@ const Admin = () => {
   // Delete project
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/projects/${id}`);
+      await axios.delete(`https://portfolio-rjdm.vercel.app/api/projects/${id}`);
       setProjects(projects.filter((p) => p._id !== id));
       toast.success("Project deleted successfully!");
     } catch (err) {
@@ -50,7 +50,7 @@ const Admin = () => {
   useEffect(() => {
     const fetchVisitors = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/visitors");
+        const res = await fetch("https://portfolio-rjdm.vercel.app/api/visitors");
         const data = await res.json();
         setVisitors(data);
       } catch (err) {

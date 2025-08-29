@@ -57,7 +57,7 @@ export default function ProjectFormModal({ show, handleClose }) {
     }
 
     // Send formData (with file)
-    await axios.post("http://localhost:5000/api/projects", data, {
+    await axios.post("https://portfolio-rjdm.vercel.app/api/projects", data, {
       headers: { "Content-Type": "multipart/form-data" },
     });
 
