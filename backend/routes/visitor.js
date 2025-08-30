@@ -3,6 +3,14 @@ import Visitor from "../models/Visitor.js";
 
 const router = express.Router();
 
+// ✅ Preflight handler (important for CORS)
+router.options("*", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://portfolio-sand-omega-58.vercel.app");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.sendStatus(200);
+});
+
 // Save visitor
 router.post("/", async (req, res) => {
   try {
