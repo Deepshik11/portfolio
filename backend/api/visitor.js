@@ -2,22 +2,27 @@ import dbConnect from "../lib/dbConnect.js";
 import Visitor from "../models/Visitor.js";
 
 export default async function handler(req, res) {
-  // CORS headers
-  res.setHeader("Access-Control-Allow-Origin", "https://portfolio-sand-omega-58.vercel.app");
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  const allowedOrigin = "https://portfolio-sand-omega-58.vercel.app";
 
-  // Preflight
+  // Common CORS headers
+  res.setHeader("Access-Control-Allow-Origin", allowedOrigin);
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-CSRF-Token, X-Requested-With, Accept, Content-Type, Authorization"
+  );
+
+  // Preflight request
   if (req.method === "OPTIONS") {
-    res.writeHead(200, {
-      "Access-Control-Allow-Origin": "https://portfolio-sand-omega-58.vercel.app",
-      "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization",
-    });
-    return res.end();
+    return res.status(200).end();
   }
 
-  await dbConnect();
+  try {
+    await dbConnect();
+  } catch (err) {
+    return res.status(500).json({ success: false, error: "Database connection failed" });
+  }
 
   if (req.method === "POST") {
     try {
