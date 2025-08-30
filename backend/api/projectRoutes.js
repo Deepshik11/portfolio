@@ -3,18 +3,29 @@ import Project from "../models/Project.js";
 import cloudinary from "../config/cloudinary.js";
 import formidable from "formidable";
 
-// Disable Next.js/Vercel default body parsing so we can handle form-data
 export const config = {
   api: {
     bodyParser: false,
   },
 };
 
+function setCors(res) {
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  res.setHeader("Access-Control-Allow-Origin", "*"); // change * to your frontend URL if you want strict
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,DELETE,OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+}
+
 export default async function handler(req, res) {
+  setCors(res);   // ✅ always apply
+
+  if (req.method === "OPTIONS") {
+    return res.status(200).end(); // ✅ handle preflight
+  }
+
   await dbConnect();
 
   if (req.method === "GET") {
-    // GET all projects
     try {
       const projects = await Project.find();
       res.status(200).json(projects);
@@ -24,17 +35,13 @@ export default async function handler(req, res) {
   }
 
   else if (req.method === "POST") {
-    // POST new project with image upload
     const form = new formidable.IncomingForm();
 
     form.parse(req, async (err, fields, files) => {
-      if (err) {
-        return res.status(500).json({ error: "Form parsing failed" });
-      }
+      if (err) return res.status(500).json({ error: "Form parsing failed" });
 
       try {
         let imageUrl = "";
-
         if (files.img) {
           const result = await cloudinary.uploader.upload(files.img.filepath, {
             folder: "projects",
@@ -42,7 +49,6 @@ export default async function handler(req, res) {
           imageUrl = result.secure_url;
         }
 
-        // Handle arrays (convert strings into arrays if needed)
         const bodyData = { ...fields };
         ["role", "breakpoints", "long_discription", "tech", "keyPoints"].forEach(
           (field) => {
@@ -56,31 +62,21 @@ export default async function handler(req, res) {
           }
         );
 
-        const project = new Project({
-          ...bodyData,
-          img: imageUrl,
-        });
-
+        const project = new Project({ ...bodyData, img: imageUrl });
         const saved = await project.save();
         res.status(201).json(saved);
       } catch (err) {
-        console.error(err);
         res.status(500).json({ error: err.message });
       }
     });
   }
 
   else if (req.method === "DELETE") {
-    // DELETE project by ID (expect ?id=123 in query)
     try {
       const { id } = req.query;
       const deleted = await Project.findByIdAndDelete(id);
-
-      if (deleted) {
-        res.status(200).json({ message: "Project deleted successfully" });
-      } else {
-        res.status(404).json({ message: "Project not found" });
-      }
+      if (deleted) res.status(200).json({ message: "Project deleted successfully" });
+      else res.status(404).json({ message: "Project not found" });
     } catch (err) {
       res.status(500).json({ error: err.message });
     }
