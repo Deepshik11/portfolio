@@ -11,7 +11,7 @@ export const config = {
 
 function setCors(res) {
   res.setHeader("Access-Control-Allow-Credentials", true);
-  res.setHeader("Access-Control-Allow-Origin", "*"); // change * to your frontend URL if you want strict
+  res.setHeader("Access-Control-Allow-Origin", "https://portfolio-sand-omega-58.vercel.app/"); // change * to your frontend URL if you want strict
   res.setHeader("Access-Control-Allow-Methods", "GET,POST,DELETE,OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 }

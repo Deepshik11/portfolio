@@ -2,14 +2,19 @@ import dbConnect from "../lib/dbConnect.js";
 import Visitor from "../models/Visitor.js";
 
 export default async function handler(req, res) {
-  // ✅ Add CORS headers
+  // CORS headers
   res.setHeader("Access-Control-Allow-Origin", "https://portfolio-sand-omega-58.vercel.app");
   res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-  // ✅ Handle OPTIONS preflight
+  // Preflight
   if (req.method === "OPTIONS") {
-    return res.status(200).end();
+    res.writeHead(200, {
+      "Access-Control-Allow-Origin": "https://portfolio-sand-omega-58.vercel.app",
+      "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    });
+    return res.end();
   }
 
   await dbConnect();
