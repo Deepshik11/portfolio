@@ -50,7 +50,7 @@ const Admin = () => {
   useEffect(() => {
     const fetchVisitors = async () => {
       try {
-        const res = await fetch("https://portfolio-rjdm.vercel.app/api/visitors");
+        const res = await fetch("https://portfolio-rjdm.vercel.app/api/visitor");
         const data = await res.json();
         setVisitors(data);
       } catch (err) {
