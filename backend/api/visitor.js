@@ -2,10 +2,15 @@ import dbConnect from "../lib/dbConnect.js";
 import Visitor from "../models/Visitor.js";
 
 export default async function handler(req, res) {
-  const allowedOrigin = "https://portfolio-sand-omega-58.vercel.app";
+  const allowedOrigins = [
+    "http://localhost:5173", // dev
+    "https://portfolio-sand-omega-58.vercel.app" // production
+  ];
 
-  // Common CORS headers
-  res.setHeader("Access-Control-Allow-Origin", allowedOrigin);
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
   res.setHeader(
@@ -13,16 +18,22 @@ export default async function handler(req, res) {
     "X-CSRF-Token, X-Requested-With, Accept, Content-Type, Authorization"
   );
 
-  // Preflight request
+  // ✅ Preflight with headers
   if (req.method === "OPTIONS") {
-    return res.status(200).end();
+  const allowedOrigins = [
+    "http://localhost:5173",
+    "https://portfolio-sand-omega-58.vercel.app",
+  ];
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
   }
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "X-CSRF-Token, X-Requested-With, Accept, Content-Type, Authorization");
+  return res.status(200).end();
+}
 
-  try {
-    await dbConnect();
-  } catch (err) {
-    return res.status(500).json({ success: false, error: "Database connection failed" });
-  }
 
   if (req.method === "POST") {
     try {
