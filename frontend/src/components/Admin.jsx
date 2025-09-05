@@ -29,7 +29,7 @@ const Admin = () => {
   // Fetch projects
   useEffect(() => {
     axios
-      .get("https://portfolio-rjdm.vercel.app/api/projects")
+      .get("https://portfolio-rjdm.vercel.app/api/projectRoutes")
       .then((res) => setProjects(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -37,7 +37,7 @@ const Admin = () => {
   // Delete project
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://portfolio-rjdm.vercel.app/api/projects/${id}`);
+      await axios.delete(`https://portfolio-rjdm.vercel.app/api/projectRoutes/${id}`);
       setProjects(projects.filter((p) => p._id !== id));
       toast.success("Project deleted successfully!");
     } catch (err) {

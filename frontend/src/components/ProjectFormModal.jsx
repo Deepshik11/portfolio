@@ -65,7 +65,7 @@ export default function ProjectFormModal({ show, handleClose }) {
       handleClose();
     } catch (error) {
       if (error.response) {
-        console.error("API error:", error.response.data);
+        console.error("error:", error.response.data);
         toast.error(error.response.data.error || "Error saving project");
       } else {
         console.error("Network error:", error.message);
