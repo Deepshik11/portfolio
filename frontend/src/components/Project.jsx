@@ -6,17 +6,16 @@ import { FaArrowLeft } from "react-icons/fa";
 import Footer from "../Section/Footer.jsx";
 
 const Project = () => {
-  const [projects, setProjects] = useState([]); // store DB projects
-  const [categories, setCategories] = useState([]); // ✅ store DB categories
+  const [projects, setProjects] = useState([]); 
+  const [categories, setCategories] = useState([]); 
   const [selectedTech, setSelectedTech] = useState("All");
   const [loading, setLoading] = useState(true);
 
-  // ✅ Fetch projects & categories from backend
-  // ✅ Fetch projects from backend and extract categories
+
 useEffect(() => {
 const fetchProjects = async () => {
   try {
-    const res = await fetch("https://portfolio-rjdm.vercel.app/api/projects");
+    const res = await fetch("http://localhost:5000/api/projects");
     const data = await res.json();
     console.log("Projects API response:", data); // 👀 debug
 
