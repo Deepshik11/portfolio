@@ -5,31 +5,34 @@ import mongoose from "mongoose";
 import projectsRouter from "./api/projectRoutes.js";
 import visitorsRouter from "./api/Visitor.js";
 
-
 dotenv.config();
 
 const app = express();
 
-// ---------- DB CONNECTION DIRECT ----------
-try {
-  await mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-  console.log("MongoDB connected");
-} catch (err) {
-  console.error("Database connection failed:", err.message);
-  // ❌ Don't use process.exit(1) in serverless — it kills the function
-}
+// ---------- DB CONNECTION ----------
+let isConnected = false;
+const connectDB = async () => {
+  if (isConnected) return;
+  try {
+    await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    isConnected = true;
+    console.log("MongoDB connected");
+  } catch (err) {
+    console.error("Database connection failed:", err.message);
+  }
+};
+await connectDB();
 
 // ---------- MIDDLEWARE ----------
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,   // one allowed origin
-    credentials: true
+    origin: process.env.CLIENT_URL,
+    credentials: true,
   })
 );
-
 app.use(express.json());
 
 // ---------- ROUTES ----------
@@ -43,5 +46,5 @@ app.get("/", (req, res) => {
 
 app.get("/favicon.ico", (req, res) => res.status(204).end());
 
-// ---------- EXPORT APP FOR VERCEL ----------
-export default app;
+// ---------- EXPORT HANDLER FOR VERCEL ----------
+export default (req, res) => app(req, res);
