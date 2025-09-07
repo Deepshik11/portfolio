@@ -8,7 +8,6 @@ import visitorsRouter from "./api/Visitor.js";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
 // ---------- DB CONNECTION DIRECT ----------
 try {
@@ -19,17 +18,16 @@ try {
   console.log("MongoDB connected");
 } catch (err) {
   console.error("Database connection failed:", err.message);
-  process.exit(1); // stop server if DB fails
+  // ❌ Don't use process.exit(1) in serverless — it kills the function
 }
 
-
+// ---------- MIDDLEWARE ----------
 app.use(
   cors({
     origin: process.env.CLIENT_URL,   // one allowed origin
-    credentials: true                 // send cookies if needed
+    credentials: true
   })
 );
-
 
 app.use(express.json());
 
@@ -39,10 +37,10 @@ app.use("/api/visitors", visitorsRouter);
 
 // ---------- ROOT ----------
 app.get("/", (req, res) => {
-  res.send("API is running...");
+  res.send("✅ API is running on Vercel!");
 });
 
-// ---------- START SERVER ----------
-app.listen(PORT, () => {
-  console.log(` Server running on http://localhost:${PORT}`);
-});
+app.get("/favicon.ico", (req, res) => res.status(204).end());
+
+// ---------- EXPORT APP FOR VERCEL ----------
+export default app;
