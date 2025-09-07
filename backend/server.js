@@ -2,8 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
-import projectsRouter from "./backend/api/projectRoutes.js";
-import visitorsRouter from "./backend/api/Visitor.js";
+import projectsRouter from "./api/projectRoutes.js";
+import visitorsRouter from "./api/Visitor.js";
 
 
 dotenv.config();
