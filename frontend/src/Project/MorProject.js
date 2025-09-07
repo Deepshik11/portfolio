@@ -5,6 +5,8 @@ import THBImg from '../assets/project3.png'
 import Figma from '../assets/figma1.png'
 import Musedo from '../assets/musedo.png'
 import glass from '../assets/glass.png'
+import Pragathi from '../assets/pragathi.png'
+import Grovr from '../assets/grov.png'
 const Moreprojects=[
         {
         route : "examshelf",
@@ -111,7 +113,7 @@ const Moreprojects=[
         year:2024,
         type:"Group Project",
         role:["Wix Developer"],
-        category: "Others",
+        category: "Internship",
         siteLink : "https://www.museoedu.com/",
         codeLink : "",
         img : Musedo ,
@@ -152,5 +154,60 @@ const Moreprojects=[
             "Includes a dynamic color change option that alters the card’s hues, enhancing interactivity and visual appeal.",
         ]
     },
+    {
+    webtype: "Real Estate Platform",
+    route: "Pragathi",
+    name: "Pragathi",
+    year: 2025,
+    type: "Internship Project",
+    role: ["Full Stack Developer"],
+    category: "Internship",
+    siteLink: "https://pragathiproptech.com/",   
+    codeLink: "",   
+    img: Pragathi, 
+    breakpoints: ["Desktop", "Tablet", "Mobile"],
+    short_discription: 
+      "Pragathi is a real estate platform developed during my internship at Pentagon Innovations. The project focused on creating an efficient backend admin dashboard, automating property site generation, and tracking lead analytics.",
+    long_discription: [
+      "Pragathi is a real estate platform I contributed to during my internship at Pentagon Innovations. The platform streamlines property management for real estate businesses by integrating a scalable backend and automated property site generation.",
+      "I built the backend admin dashboard and connected it to a database for efficient property handling. Whenever an admin submitted a new property form, a standalone property website was dynamically generated using pre-defined PHP templates. Additionally, I implemented analytics to monitor 'Contact Us' submissions both overall and per property, helping the client measure engagement and optimize their marketing strategy."
+    ],
+    tech: ["PHP", "MySQL", "JavaScript", "HTML", "CSS"],
+    keyPoints: [
+      "Developed and integrated the backend admin dashboard for property management.",
+      "Connected and structured the database for scalable data flow.",
+      "Automated dynamic property site creation using PHP templates upon admin form submission.",
+      "Tracked and analyzed 'Contact Us' form submissions for engagement insights.",
+      "Designed backend logic for seamless integration with the main platform."
+    ]
+},
+{
+    webtype: "Business Website",
+    route: "Grovr",
+    name: "Grovr.in – Redesign",
+    year: 2025,
+    type: "Freelance Project",
+    role: ["Wix Developer", "UI/UX Designer"],
+    category: "Freelance",
+    siteLink: "https://www.grovr.in/",  // add or adjust if the final URL differs
+    codeLink: "",
+    img: Grovr,  // replace with your image import/variable
+    breakpoints: ["Desktop", "Tablet", "Mobile"],
+    short_discription:
+      "Redesigned and delivered Grovr.in on Wix with a strong focus on clean visuals and user-friendly navigation. Updated major sections while retaining the client's original blog and course pages.",
+    long_discription: [
+      "Grovr.in is a business platform that required a modern, user-focused redesign. As a self-employed Wix Developer, I collaborated with a teammate to revamp the site’s look and improve the overall user experience.",
+      "I was responsible for redesigning most sections of the site—including the homepage, services pages, and overall layout—while maintaining consistency with the client’s branding. The existing course and blog sections were preserved as per client requirements. The redesign prioritized intuitive navigation, clean UI, and visual hierarchy to make the site more appealing and functional for visitors."
+    ],
+    tech: ["Figma", "Wix", "UI/UX Design", "CSS"],
+    keyPoints: [
+      "Redesigned core pages (homepage, service pages) with improved UI/UX.",
+      "Collaborated with a teammate for layout and visual strategy.",
+      "Retained original blog and course sections to align with client requirements.",
+      "Focused on clean, modern visuals and an intuitive user journey.",
+      "Delivered the final design on Wix ensuring responsive performance across devices."
+    ]
+}
+
 ]
 export default Moreprojects 
