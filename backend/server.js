@@ -16,30 +16,20 @@ try {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-  console.log("✅ MongoDB connected");
+  console.log("MongoDB connected");
 } catch (err) {
-  console.error("❌ Database connection failed:", err.message);
+  console.error("Database connection failed:", err.message);
   process.exit(1); // stop server if DB fails
 }
 
-// ---------- CORS ----------
-const allowedOrigins = [
-  "http://localhost:5173", // dev
-  "https://portfolio-sand-omega-58.vercel.app", // production
-];
 
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, origin);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
+    origin: process.env.CLIENT_URL,   // one allowed origin
+    credentials: true                 // send cookies if needed
   })
 );
+
 
 app.use(express.json());
 
@@ -49,10 +39,10 @@ app.use("/api/visitors", visitorsRouter);
 
 // ---------- ROOT ----------
 app.get("/", (req, res) => {
-  res.send("🚀 API is running...");
+  res.send("API is running...");
 });
 
 // ---------- START SERVER ----------
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(` Server running on http://localhost:${PORT}`);
 });

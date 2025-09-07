@@ -57,7 +57,7 @@ export default function ProjectFormModal({ show, handleClose }) {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/projects", data, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/projects`, data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

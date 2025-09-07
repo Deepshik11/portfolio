@@ -29,7 +29,7 @@ const Admin = () => {
   // Fetch projects
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/projects")
+      .get(`${import.meta.env.VITE_API_URL}/projects`)
       .then((res) => setProjects(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -37,7 +37,7 @@ const Admin = () => {
   // Delete project
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/projects/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/projects/${id}`);
       setProjects(projects.filter((p) => p._id !== id));
       toast.success("Project deleted successfully!");
     } catch (err) {
@@ -50,7 +50,7 @@ const Admin = () => {
   useEffect(() => {
     const fetchVisitors = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/visitors");
+        const res = await fetch("${import.meta.env.VITE_API_URL}/visitors");
         const data = await res.json();
         setVisitors(data);
       } catch (err) {
